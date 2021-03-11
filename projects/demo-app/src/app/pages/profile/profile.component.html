@@ -6,7 +6,7 @@
       User Profile
     </mat-card-title>
     <mat-card-content>
-      <app-user-profile [userProfile]="usersSvc.getCurrentUser()"></app-user-profile>
+      <app-user-profile [userProfile]="(currentUser$ | async)"></app-user-profile>
     </mat-card-content>
   </mat-card>
 

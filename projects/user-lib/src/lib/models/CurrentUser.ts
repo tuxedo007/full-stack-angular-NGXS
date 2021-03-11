@@ -1,7 +1,13 @@
 
 import { intersection } from 'lodash-es';
 
-export class CurrentUser {
+export interface ICurrentUser {
+  username: string;
+  userKind: string;
+  displayName: string;
+  roles: string[];
+}
+export class CurrentUser implements ICurrentUser {
 
   public username: string;
   public userKind: string;

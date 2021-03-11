@@ -16,6 +16,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -26,8 +29,9 @@ import { AuthorizationInterceptorService } from '@tuxedo-utils/user-lib';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 
-import { UserLibModule } from '@tuxedo-utils/user-lib';
+import { AppStateService } from './services/app-state.service';
 
+import { UserLibModule } from '@tuxedo-utils/user-lib';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,8 @@ import { UserLibModule } from '@tuxedo-utils/user-lib';
     MatTableModule,
     MatSnackBarModule,
     UserLibModule,
+    NgxsModule.forRoot([AppStateService]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptorService, multi: true },

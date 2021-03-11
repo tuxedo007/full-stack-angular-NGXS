@@ -13,12 +13,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { NgxsModule } from '@ngxs/store';
 
 import { ChangePasswordFormComponent } from './components/change-password-form/change-password-form.component';
 import { CurrentUserComponent } from './components/current-user/current-user.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { CurrentUserStateService } from './services/current-user-state.service';
+
+// compiler hack to allow production build when using .forFeature()
+export const NgxsFeatureModule = NgxsModule.forFeature([CurrentUserStateService]);
 
 @NgModule({
   declarations: [
@@ -42,6 +48,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatMenuModule,
     MatTableModule,
     MatSnackBarModule,
+    NgxsFeatureModule,
   ],
   exports: [
     ChangePasswordFormComponent,

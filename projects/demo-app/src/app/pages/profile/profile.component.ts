@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Select } from '@ngxs/store';
 
 import { UsersService } from '@tuxedo-utils/user-lib';
 import { ChangePasswordForm } from '@tuxedo-utils/user-lib';
+
+import { CurrentUserState } from '@tuxedo-utils/user-lib';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +13,9 @@ import { ChangePasswordForm } from '@tuxedo-utils/user-lib';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  @Select((state: { currentUser: CurrentUserState }) => state.currentUser)
+  public currentUser$: Observable<CurrentUserState> | undefined;
 
   constructor(public usersSvc: UsersService) { }
 

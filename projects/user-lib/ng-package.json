@@ -6,6 +6,7 @@
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
       "lodash-es": "lodash-es",
+      "@ngxs/store": "ngxs-store",
       "@tuxedo-utils/shared-lib": "@tuxedo-utils/shared-lib"
     }
   }

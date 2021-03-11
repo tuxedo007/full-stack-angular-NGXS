@@ -34,7 +34,7 @@ export class UsersService {
           return currentUser;
         }),
         tap(currentUser => {
-          this.currentUser = currentUser
+          this.currentUser = currentUser;
         }),
       );
   }
@@ -74,6 +74,6 @@ export class UsersService {
     this.currentUser = null;
     localStorage.refreshToken = null;
   }
-  
+
 }
 

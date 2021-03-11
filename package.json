@@ -22,6 +22,8 @@
     "@angular/platform-browser": "~11.2.2",
     "@angular/platform-browser-dynamic": "~11.2.2",
     "@angular/router": "~11.2.2",
+    "@ngxs/devtools-plugin": "^3.7.1",
+    "@ngxs/store": "^3.7.1",
     "@tuxedo-utils/category-lib": "file:dist/category-lib",
     "@tuxedo-utils/employee-lib": "file:dist/employee-lib",
     "@tuxedo-utils/shared-lib": "file:dist/shared-lib",

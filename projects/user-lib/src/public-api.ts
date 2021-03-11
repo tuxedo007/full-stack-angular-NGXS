@@ -16,6 +16,9 @@ export * from './lib/models/LoginForm';
 export * from './lib/models/UserProfile';
 export * from './lib/models/UserRefresh';
 export * from './lib/models/UserResult';
+export * from './lib/models/CurrentUserState';
+
+export * from './lib/actions/current-user.actions';
 
 export * from './lib/services/allowed-roles-guard.service';
 export * from './lib/services/authorization-interceptor.service';
